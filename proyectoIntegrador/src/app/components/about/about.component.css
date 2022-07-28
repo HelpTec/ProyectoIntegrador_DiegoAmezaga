@@ -1,0 +1,33 @@
+div{
+    background-color: #a1b5cb;
+    text-align: center;
+}
+/*etiqueta nombre*/
+#nom{
+    font-weight: bold;
+    margin-top: 30%;   
+}
+/*css para la foto perfil*/
+#foto{
+    box-shadow: 3px 3px 3px grey;
+    border-radius: 100%;
+}
+/*mediaquery pantalla grande foto*/
+@media (min-width: 576px){
+    #foto{
+        position:absolute;
+        width:15%;
+        left: 3%;
+        top: 450px
+    }
+}
+/*css para la foto perfil pantalla chica*/
+@media (max-width: 575px) {
+    #foto {
+        position: absolute;
+        width: 40%;
+        left: 30%;
+        top: 450px
+                
+    }
+}
