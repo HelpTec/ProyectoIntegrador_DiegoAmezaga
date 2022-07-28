@@ -1,3 +1,27 @@
 #logoap{
     width: 150px;
 }
+img {
+    width: 50px;
+    padding: 4px;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+button{
+    padding: 10px;
+    margin-right: 7px;
+    margin-left: 7px;
+    border-width: medium;
+}
+@media(max-width: 575px){
+.container{
+    flex-direction: column;
+}
+.rsociales{
+    flex-direction: column;
+    align-items: center;
+}
+}
