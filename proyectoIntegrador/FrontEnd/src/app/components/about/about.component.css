@@ -5,13 +5,15 @@ div{
 /*etiqueta nombre*/
 #nom{
     font-weight: bold;
-    margin-top: 30%;   
+    margin-top: 27.3%;
+    margin-left: 20px;
 }
 /*css para la foto perfil*/
 #foto{
     box-shadow: 3px 3px 3px grey;
     border-radius: 100%;
 }
+
 /*mediaquery pantalla grande foto*/
 @media (min-width: 576px){
     #foto{
@@ -28,6 +30,9 @@ div{
         width: 40%;
         left: 30%;
         top: 500px
-                
+    }
+    #nom{
+        margin-top: 32%;
+        margin-left: 0;
     }
 }
