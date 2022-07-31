@@ -1,7 +1,7 @@
 
-package com.portfolio.mgb.Interface;
+package com.portfolio.proyectofinalbcknd.Interface;
 
-import com.portfolio.mgb.Entity.Persona;
+import com.portfolio.proyectofinalbcknd.Entity.Persona;
 import java.util.List;
 
 public interface IPersonaInterface {

@@ -1,8 +1,8 @@
 
-package com.portfolio.mgb.Controller;
+package com.portfolio.proyectofinalbcknd.Controller;
 
-import com.portfolio.mgb.Entity.Persona;
-import com.portfolio.mgb.Interface.IPersonaInterface;
+import com.portfolio.proyectofinalbcknd.Entity.Persona;
+import com.portfolio.proyectofinalbcknd.Interface.IPersonaInterface;
 import java.util.List;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.beans.factory.annotation.Autowired;

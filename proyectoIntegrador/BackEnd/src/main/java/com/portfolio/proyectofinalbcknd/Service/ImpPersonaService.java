@@ -1,10 +1,10 @@
 
-package com.portfolio.mgb.Service;
+package com.portfolio.proyectofinalbcknd.Service;
 
-import com.portfolio.mgb.Entity.Persona;
+import com.portfolio.proyectofinalbcknd.Entity.Persona;
 import org.springframework.stereotype.Service;
-import com.portfolio.mgb.Interface.IPersonaInterface;
-import com.portfolio.mgb.Repository.IPersonaRepository;
+import com.portfolio.proyectofinalbcknd.Interface.IPersonaInterface;
+import com.portfolio.proyectofinalbcknd.Repository.IPersonaRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 

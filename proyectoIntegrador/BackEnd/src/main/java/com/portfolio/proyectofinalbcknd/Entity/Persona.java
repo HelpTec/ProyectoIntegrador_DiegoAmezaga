@@ -1,4 +1,4 @@
-package com.portfolio.mgb.Entity;
+package com.portfolio.proyectofinalbcknd.Entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

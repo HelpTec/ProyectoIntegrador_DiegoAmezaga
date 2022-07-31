@@ -1,4 +1,4 @@
-package com.portfolio.mgb;
+package com.portfolio.proyectofinalbcknd;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
