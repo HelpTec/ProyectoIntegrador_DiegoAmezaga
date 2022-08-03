@@ -1,4 +1,4 @@
-//Este es el nexo con el fron
+//Este es el nexo con el front
 package com.portfolio.proyectofinalbcknd.Security.Controller;
 
 import java.util.HashSet;
@@ -54,7 +54,7 @@ public class AuthorizadorController {
         if(usuarioService.existByNombreUsuario(nuevoUsuario.getNombreUsuario()))
             return new ResponseEntity(new Mensaje("Nombre no disponible"), HttpStatus.BAD_REQUEST);
         if(usuarioService.existByEmail(nuevoUsuario.getEmail()))
-            return new ResponseEntity(new Mensaje("Nombre no disponible"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("Email ya ingresado"), HttpStatus.BAD_REQUEST);
         
         Usuario usuario = new Usuario(nuevoUsuario.getNombre(), nuevoUsuario.getNombreUsuario(),
             nuevoUsuario.getEmail(), passwordEncoder.encode(nuevoUsuario.getPassword()));
