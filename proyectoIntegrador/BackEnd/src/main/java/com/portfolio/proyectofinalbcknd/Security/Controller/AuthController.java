@@ -1,7 +1,6 @@
 //Este es el nexo con el front
 package com.portfolio.proyectofinalbcknd.Security.Controller;
 
-import java.util.HashSet;
 import com.portfolio.proyectofinalbcknd.Security.Dto.JwtDto;
 import com.portfolio.proyectofinalbcknd.Security.Dto.LoginUsuario;
 import com.portfolio.proyectofinalbcknd.Security.Dto.NuevoUsuario;
@@ -11,6 +10,7 @@ import com.portfolio.proyectofinalbcknd.Security.Rol;
 import com.portfolio.proyectofinalbcknd.Security.Service.RolService;
 import com.portfolio.proyectofinalbcknd.Security.Service.UsuarioService;
 import com.portfolio.proyectofinalbcknd.Security.jwt.JwtProvider;
+import java.util.HashSet;
 import java.util.Set;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,51 +32,49 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/auth")
 @CrossOrigin
-
-public class AuthorizadorController {
-    @Autowired
-    PasswordEncoder passwordEncoder;
-    @Autowired
-    AuthenticationManager authenticationManager;
-    @Autowired
-    UsuarioService usuarioService;
-    @Autowired
-    RolService rolService;
-    @Autowired
-    JwtProvider jwtProvider;
-
-    //creador de usuarios
+public class AuthController {
+    @Autowired PasswordEncoder passwordEncoder;
+    @Autowired AuthenticationManager authManager;
+    @Autowired UsuarioService usuarioService;
+    @Autowired RolService rolService;
+    @Autowired JwtProvider jwtProvider;
     
-    @PostMapping("/auth/nuevo")
-    public ResponseEntity<?> nuevo(@Valid @RequestBody NuevoUsuario nuevoUsuario, BindingResult bindingResult){
-        if(bindingResult.hasErrors())
-            return new ResponseEntity(new Mensaje("Campos invalidos"), HttpStatus.BAD_REQUEST);
-        if(usuarioService.existByNombreUsuario(nuevoUsuario.getNombreUsuario()))
-            return new ResponseEntity(new Mensaje("Nombre no disponible"), HttpStatus.BAD_REQUEST);
-        if(usuarioService.existByEmail(nuevoUsuario.getEmail()))
-            return new ResponseEntity(new Mensaje("Email ya ingresado"), HttpStatus.BAD_REQUEST);
+    @PostMapping("/nuevo")
+    public ResponseEntity<?> nuevo (@Valid @RequestBody NuevoUsuario nuevoUsuario,BindingResult bindingResult){
+        if(bindingResult.hasErrors()){
+            return new ResponseEntity(new Mensaje("Campos invalidos."),HttpStatus.BAD_REQUEST);
+        }
+        if(usuarioService.existsByNombreUsuario(nuevoUsuario.getNombreUsuario())){
+            return new ResponseEntity(new Mensaje("Nombre de usuario ya tomado."),HttpStatus.BAD_REQUEST);
+        }
+        if(usuarioService.existsByEmail(nuevoUsuario.getEmail())){
+            return new ResponseEntity(new Mensaje("Email preexistente."),HttpStatus.BAD_REQUEST);
+        }
         
-        Usuario usuario = new Usuario(nuevoUsuario.getNombre(), nuevoUsuario.getNombreUsuario(),
-            nuevoUsuario.getEmail(), passwordEncoder.encode(nuevoUsuario.getPassword()));
+        Usuario usuario = new Usuario(nuevoUsuario.getNombre(),nuevoUsuario.getNombreUsuario(),
+                                      nuevoUsuario.getEmail(),passwordEncoder.encode(nuevoUsuario.getPassword()));
         
         Set<Rol> roles = new HashSet<>();
         roles.add(rolService.getByRolNombre(RolNombre.ROLE_USER).get());
         
-        if(nuevoUsuario.getRoles().contains("admin"))
+        if(nuevoUsuario.getRoles().contains("admin")){
             roles.add(rolService.getByRolNombre(RolNombre.ROLE_ADMIN).get());
+        }
+        
         usuario.setRoles(roles);
+        
         usuarioService.save(usuario);
         
-        return new ResponseEntity(new Mensaje("Usuario Guardado"), HttpStatus.CREATED);
-        
-        }
+        return new ResponseEntity(new Mensaje("Usuario guardado"),HttpStatus.CREATED);
+    }
+    
     @PostMapping("/login")
-    public ResponseEntity<JwtDto> login(@Valid @RequestBody LoginUsuario loginUsuario, BindingResult bindingResult){
-        if(bindingResult.hasErrors())
-            return new ResponseEntity(new Mensaje("Campos Invalidos"), HttpStatus.BAD_REQUEST);
-        
-        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
-        loginUsuario.getNombreUsuario(), loginUsuario.getPassword()));
+    public ResponseEntity<JwtDto> login(@Valid @RequestBody LoginUsuario loginUsuario,BindingResult bindingResult){
+        if(bindingResult.hasErrors()){
+            return new ResponseEntity(new Mensaje("Campos incorrectos."),HttpStatus.BAD_REQUEST);
+        }
+        Authentication authentication = authManager.authenticate(new UsernamePasswordAuthenticationToken(
+        loginUsuario.getNombreUsuario(),loginUsuario.getPassword()));
         
         SecurityContextHolder.getContext().setAuthentication(authentication);
         
@@ -84,8 +82,8 @@ public class AuthorizadorController {
         
         UserDetails userDetails = (UserDetails) authentication.getPrincipal();
         
-        JwtDto jwtDto = new JwtDto(jwt, userDetails.getUsername(), userDetails.getAuthorities());
+        JwtDto jwtDto = new JwtDto(jwt,userDetails.getUsername(),userDetails.getAuthorities());
         
-        return new ResponseEntity(jwtDto, HttpStatus.OK);
+        return new ResponseEntity(jwtDto,HttpStatus.OK);
     }
 }

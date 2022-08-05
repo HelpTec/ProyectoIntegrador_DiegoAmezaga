@@ -12,13 +12,6 @@ public class NuevoUsuario {
     private String password;
     private Set<String> roles = new HashSet<>();
 
-    public NuevoUsuario(String nombre, String nombreUsuario, String email, String password) {
-        this.nombre = nombre;
-        this.nombreUsuario = nombreUsuario;
-        this.email = email;
-        this.password = password;
-    }
-
     public String getNombre() {
         return nombre;
     }
@@ -35,14 +28,6 @@ public class NuevoUsuario {
         this.nombreUsuario = nombreUsuario;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getPassword() {
         return password;
     }
@@ -57,6 +42,14 @@ public class NuevoUsuario {
 
     public void setRoles(Set<String> roles) {
         this.roles = roles;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
     
     

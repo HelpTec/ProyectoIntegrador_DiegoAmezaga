@@ -15,12 +15,15 @@ public class Rol {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    
     @NotNull
     @Enumerated(EnumType.STRING)
     private RolNombre rolNombre;
 
-    //constructores & getter y setter
-    public Rol(int id, RolNombre rolNombre) {
+    public Rol() {
+    }
+
+    public Rol(RolNombre rolNombre) {
         this.rolNombre = rolNombre;
     }
 
@@ -39,8 +42,4 @@ public class Rol {
     public void setRolNombre(RolNombre rolNombre) {
         this.rolNombre = rolNombre;
     }
-    
-    
-    
-    
 }

@@ -11,22 +11,21 @@ import java.util.Optional;
 @Service
 @Transactional
 public class UsuarioService {
-    @Autowired
-    iUsuarioRepository iusuarioRepository;
+    @Autowired iUsuarioRepository iUsuarioRepo;
     
     public Optional<Usuario> getByNombreUsuario(String nombreUsuario){
-        return iusuarioRepository.findByNombreUsuario(nombreUsuario);
+        return iUsuarioRepo.findByNombreUsuario(nombreUsuario);
     }
     
-    public boolean existByNombreUsuario(String nombreUsuario){
-        return iusuarioRepository.existsByNombreUsuario(nombreUsuario);
+    public boolean existsByNombreUsuario(String nombreUsuario){
+        return iUsuarioRepo.existsByNombreUsuario(nombreUsuario);
     }
     
-    public boolean existByEmail(String email){
-        return iusuarioRepository.existsByEmail(email);
+    public boolean existsByEmail(String email){
+        return iUsuarioRepo.existsByEmail(email);
     }
     
     public void save(Usuario usuario){
-        iusuarioRepository.save(usuario);
+        iUsuarioRepo.save(usuario);
     }
 }
