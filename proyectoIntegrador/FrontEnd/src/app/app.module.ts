@@ -17,6 +17,8 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { interceptorProvider } from './service/interceptor-service';
+import { ExperienciasAgregarComponent } from './components/experiencias-agregar/experiencias-agregar.component';
+import { ExperienciasEditarComponent } from './components/experiencias-editar/experiencias-editar.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { interceptorProvider } from './service/interceptor-service';
     FooterComponent,
     HomeComponent,
     LoginComponent,
+    ExperienciasAgregarComponent,
+    ExperienciasEditarComponent,
   ],
   imports: [
     BrowserModule,
