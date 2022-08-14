@@ -42,34 +42,34 @@ public class EstudioController {
     }
     
     @PostMapping("/create")
-    public ResponseEntity<?> create(@RequestBody DtoEstudio dtoExp) {
-        if (StringUtils.isBlank(dtoExp.getNombreE())) {
+    public ResponseEntity<?> create(@RequestBody DtoEstudio dtoEst) {
+        if (StringUtils.isBlank(dtoEst.getNombreE())) {
             return new ResponseEntity(new Mensaje("Nombre Obligatorio"),
                     HttpStatus.BAD_REQUEST);
         }
-        if(estudioService.existsByNombreE(dtoExp.getNombreE())){
+        if(estudioService.existsByNombreE(dtoEst.getNombreE())){
             return new ResponseEntity(new Mensaje("Estudio Duplicada"),
                     HttpStatus.BAD_REQUEST);
         }
-        Estudio experiencia = new Estudio(dtoExp.getNombreE(), dtoExp.getDescripcionE());
+        Estudio experiencia = new Estudio(dtoEst.getNombreE(), dtoEst.getDescripcionE());
         estudioService.save(experiencia);
         return new ResponseEntity(new Mensaje("Estudio Agregada"), HttpStatus.OK);
     }
     
     @PutMapping("/update/{id}")
-    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody DtoEstudio dtoExp){
+    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody DtoEstudio dtoEst){
         if (!estudioService.existById(id)){
             return new ResponseEntity(new Mensaje("No existe tal Id"), HttpStatus.BAD_REQUEST);
         }
-        if (estudioService.existsByNombreE(dtoExp.getNombreE()) && estudioService.getByNombreE(dtoExp.getNombreE()).get().getId() != id){
+        if (estudioService.existsByNombreE(dtoEst.getNombreE()) && estudioService.getByNombreE(dtoEst.getNombreE()).get().getId() != id){
             return new ResponseEntity(new Mensaje("Estudio Duplicada"), HttpStatus.BAD_REQUEST);
         }
-        if (StringUtils.isBlank(dtoExp.getNombreE())){
+        if (StringUtils.isBlank(dtoEst.getNombreE())){
             return new ResponseEntity(new Mensaje("Nombre Obligatorio"), HttpStatus.BAD_REQUEST);
         }
         Estudio experiencia = estudioService.getOne(id).get();
-        experiencia.setNombreE(dtoExp.getNombreE());
-        experiencia.setDescripcionE(dtoExp.getDescripcionE());
+        experiencia.setNombreE(dtoEst.getNombreE());
+        experiencia.setDescripcionE(dtoEst.getDescripcionE());
         
         estudioService.save(experiencia);
         return new ResponseEntity(new Mensaje("Estudio Actualizada"), HttpStatus.OK);

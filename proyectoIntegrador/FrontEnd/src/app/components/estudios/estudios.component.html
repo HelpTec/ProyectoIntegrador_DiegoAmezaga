@@ -1,33 +1,30 @@
 <div class="row">
     <h1>Estudios</h1>
+    <div class="col-lg-2">
+        <button class="btn btn-success" type="button" routerLink="/agregarest" *ngIf="isLogged">
+            Agregar estudio
+        </button>
+    </div>
     <div class="col-lg-1"></div>
     <div class="col-lg-11">
-        <ul>
-            <li>
-                <h1>Estudios 1 - </h1>
-                <h3>years</h3>
-            </li>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel velit facilis sunt rerum nam libero,
-                doloribus harum. Eos a, tempora aspernatur quia vel iure molestias atque quisquam deserunt non
-                temporibus.</p>
-        </ul>
-        <ul>
-            <li>
-                <h1>Estudios 2 - </h1>
-                <h3>years</h3>
-            </li>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel velit facilis sunt rerum nam libero,
-                doloribus
-                harum. Eos a, tempora aspernatur quia vel iure molestias atque quisquam deserunt non temporibus.</p>
-        </ul>
-        <ul>
-            <li>
-                <h1>Estudios 3 - </h1>
-                <h3>years</h3>
-            </li>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel velit facilis sunt rerum nam libero,
-                doloribus
-                harum. Eos a, tempora aspernatur quia vel iure molestias atque quisquam deserunt non temporibus.</p>
-        </ul>
-    </div>
-</div>
+        <table class="table">
+            <tbody>
+                <tr *ngFor="let Estudios of est">
+                    <td>
+                        <h2>{{Estudios.nombreE}}</h2>
+                    </td>
+                    <td>{{Estudios.descripcionE}}</td>
+                    <td>
+                        <button type="button" class="btn btn-dark" routerLink="/editarest/{{Estudios.id}}"
+                            *ngIf="isLogged">
+                            <i class="bi bi-brush"></i>Editar
+                        </button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger" (click)="borrar(Estudios.id)" *ngIf="isLogged">
+                            <i class="bi bi-trash"></i>Borrar
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
