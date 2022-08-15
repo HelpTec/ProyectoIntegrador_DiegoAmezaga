@@ -51,7 +51,7 @@ public class EstudioController {
             return new ResponseEntity(new Mensaje("Estudio Duplicada"),
                     HttpStatus.BAD_REQUEST);
         }
-        Estudio experiencia = new Estudio(dtoEst.getNombreE(), dtoEst.getDescripcionE());
+        Estudio experiencia = new Estudio(dtoEst.getNombreE(), dtoEst.getDescripcionE(), dtoEst.getTiempoE());
         estudioService.save(experiencia);
         return new ResponseEntity(new Mensaje("Estudio Agregada"), HttpStatus.OK);
     }
@@ -70,6 +70,7 @@ public class EstudioController {
         Estudio experiencia = estudioService.getOne(id).get();
         experiencia.setNombreE(dtoEst.getNombreE());
         experiencia.setDescripcionE(dtoEst.getDescripcionE());
+        experiencia.setTiempoE(dtoEst.getTiempoE());
         
         estudioService.save(experiencia);
         return new ResponseEntity(new Mensaje("Estudio Actualizada"), HttpStatus.OK);

@@ -51,7 +51,7 @@ public class CExperiencia {
             return new ResponseEntity(new Mensaje("Experiencia Duplicada"),
                     HttpStatus.BAD_REQUEST);
         }
-        Experiencia experiencia = new Experiencia(dtoExp.getNombreE(), dtoExp.getDescripcionE());
+        Experiencia experiencia = new Experiencia(dtoExp.getNombreE(), dtoExp.getDescripcionE(), dtoExp.getTiempoE());
         sExperiencia.save(experiencia);
         return new ResponseEntity(new Mensaje("Experiencia Agregada"), HttpStatus.OK);
     }
@@ -70,6 +70,7 @@ public class CExperiencia {
         Experiencia experiencia = sExperiencia.getOne(id).get();
         experiencia.setNombreE(dtoExp.getNombreE());
         experiencia.setDescripcionE(dtoExp.getDescripcionE());
+        experiencia.setTiempoE(dtoExp.getTiempoE());
         
         sExperiencia.save(experiencia);
         return new ResponseEntity(new Mensaje("Experiencia Actualizada"), HttpStatus.OK);

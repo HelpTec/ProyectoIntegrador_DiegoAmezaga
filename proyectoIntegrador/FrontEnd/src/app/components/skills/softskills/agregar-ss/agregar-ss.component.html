@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <div>
+            <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="nombreS">Nombre de la habilidad</label>
+                    <input type="text" class="form-control" id="nombreS" name="nombreS" [(ngModel)]="nombreS" requiered>
+                </div>
+                <div class="form-group">
+                    <label for="nivelS">Nivel (Solo numeros del 1 al 5)</label>
+                    <input type="text" class="form-control" id="nivelS" name="nivelS" [(ngModel)]="nivelS" requiered>
+                </div>
+                <div class="form-group">
+                    <label for="iconoS">Url del Icono</label>
+                    <input type="text" class="form-control" id="iconoS" name="iconoS" [(ngModel)]="iconoS" requiered>
+                </div>
+                <button class="btn btn-success" type="submit">
+                    Submit
+                </button>
+            </form>
+        </div>
+    </div>

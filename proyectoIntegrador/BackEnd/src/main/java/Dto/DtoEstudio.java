@@ -7,13 +7,16 @@ public class DtoEstudio {
     private String nombreE;
     @NotBlank
     private String descripcionE;
+    @NotBlank
+    private String tiempoE;
 
     public DtoEstudio() {
     }
 
-    public DtoEstudio(String nombreE, String descripcionE) {
+    public DtoEstudio(String nombreE, String descripcionE, String tiempoE) {
         this.nombreE = nombreE;
         this.descripcionE = descripcionE;
+        this.tiempoE = tiempoE;
     }
 
     public String getNombreE() {
@@ -30,6 +33,14 @@ public class DtoEstudio {
 
     public void setDescripcionE(String descripcionE) {
         this.descripcionE = descripcionE;
+    }
+
+    public String getTiempoE() {
+        return tiempoE;
+    }
+
+    public void setTiempoE(String tiempoE) {
+        this.tiempoE = tiempoE;
     }
     
     

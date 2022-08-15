@@ -21,6 +21,14 @@ import { ExperienciasAgregarComponent } from './components/experiencias-agregar/
 import { ExperienciasEditarComponent } from './components/experiencias-editar/experiencias-editar.component';
 import { EstudiosCrearComponent } from './components/estudios/estudios-crear/estudios-crear.component';
 import { EstudiosEditarComponent } from './components/estudios/estudios-editar/estudios-editar.component';
+import { AgregarHSComponent } from './components/skills/hardskills/agregar-hs/agregar-hs.component';
+import { EditarHSComponent } from './components/skills/hardskills/editar-hs/editar-hs.component';
+import { AgregarSSComponent } from './components/skills/softskills/agregar-ss/agregar-ss.component';
+import { EditarSSComponent } from './components/skills/softskills/editar-ss/editar-ss.component';
+import { HardskillsComponent } from './components/skills/hardskills/hardskills/hardskills.component';
+import { SoftskillsComponent } from './components/skills/softskills/softskills/softskills.component';
+import { AgregarproyectoComponent } from './components/proyecto/agregarproyecto/agregarproyecto.component';
+import { EditarproyectoComponent } from './components/proyecto/editarproyecto/editarproyecto.component';
 
 
 @NgModule({
@@ -41,6 +49,14 @@ import { EstudiosEditarComponent } from './components/estudios/estudios-editar/e
     ExperienciasEditarComponent,
     EstudiosCrearComponent,
     EstudiosEditarComponent,
+    AgregarHSComponent,
+    EditarHSComponent,
+    AgregarSSComponent,
+    EditarSSComponent,
+    HardskillsComponent,
+    SoftskillsComponent,
+    AgregarproyectoComponent,
+    EditarproyectoComponent,
   ],
   imports: [
     BrowserModule,

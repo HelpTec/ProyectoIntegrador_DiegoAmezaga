@@ -13,15 +13,17 @@ public class Experiencia {
     private int id;
     private String nombreE;
     private String descripcionE;
+    private String tiempoE;
     
     //constructores
 
     public Experiencia() {
     }
 
-    public Experiencia(String nombreE, String descripcionE) {
+    public Experiencia(String nombreE, String descripcionE, String tiempoE) {
         this.nombreE = nombreE;
         this.descripcionE = descripcionE;
+        this.tiempoE = tiempoE;
     }
 
     //getters Setters
@@ -48,6 +50,15 @@ public class Experiencia {
     public void setDescripcionE(String descripcionE) {
         this.descripcionE = descripcionE;
     }
+
+    public void setTiempoE(String tiempoE) {
+        this.tiempoE = tiempoE;
+    }
+
+    public String getTiempoE() {
+        return tiempoE;
+    }
+    
     
     
 }
