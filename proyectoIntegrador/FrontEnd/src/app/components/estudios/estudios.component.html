@@ -1,3 +1,4 @@
+
 <div class="row">
     <h1>Estudios</h1>
     <div class="col-lg-2">
@@ -5,14 +6,11 @@
             Agregar estudio
         </button>
     </div>
-    <div class="col-lg-1"></div>
-    <div class="col-lg-11">
+    <div class="col-lg-10" id="tarjeta">
         <table class="table">
             <tbody>
                 <tr *ngFor="let Estudios of est">
-                    <td>
-                        <h2>{{Estudios.nombreE}}</h2>
-                    </td>
+                    <td><h2>{{Estudios.nombreE}}</h2></td>
                     <td>{{Estudios.tiempoE}}</td>
                     <td>{{Estudios.descripcionE}}</td>
                     <td>
@@ -29,3 +27,5 @@
                 </tr>
             </tbody>
         </table>
+    </div>
+</div>

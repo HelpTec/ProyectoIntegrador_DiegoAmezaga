@@ -5,7 +5,6 @@ div{
 /*etiqueta nombre*/
 #nom{
     font-weight: bold;
-    margin-top: 27.3%;
     margin-left: 20px;
 }
 /*css para la foto perfil*/
@@ -34,5 +33,18 @@ div{
     #nom{
         margin-top: 32%;
         margin-left: 0;
+    }
+}
+/*css para nombre y titulo con 860px*/
+@media (min-width: 576px) and (max-width: 860px){
+    h3, h4{
+        float: right;
+        margin-top: 50%;
+        margin-left: 0;
+        padding:0;
+    };
+    #nom {
+        margin-left: 0;
+        padding-bottom: 0;
     }
 }

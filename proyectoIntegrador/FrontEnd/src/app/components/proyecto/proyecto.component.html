@@ -7,9 +7,12 @@
     </div>
     <div *ngFor="let Proyecto of proy">
     <div class="contenedor">
-        <div class="col-sm-12 col-md-6 col-lg-6 p1">
+        <div class="row">
+        <div class="col-sm-12 col-md-2 col-lg-2 p1">
             <h1>{{Proyecto.nombreP}}</h1>
-            <p class="text-start fs-1">{{Proyecto.descripcionP}}</p>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 p1">
+            <p class="text-start fs-2">{{Proyecto.descripcionP}}</p>
         </div>
         <div class="col-sm-12 col-md-5 col-lg-5 p2">
             <a href={{Proyecto.urlP}}><img src={{Proyecto.imagenP}} class= "img-fluid img-proyecto"></a>
@@ -21,6 +24,7 @@
             <button type="button" class="btn btn-dark" routerLink="/editarproy/{{Proyecto.id}}" *ngIf="isLogged">
                 <i class="bi bi-brush"></i>
             </button>
+        </div>
         </div>
     </div>
     </div>
