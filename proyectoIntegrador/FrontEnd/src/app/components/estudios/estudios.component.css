@@ -7,16 +7,21 @@
     width: 200px;
 }
 
-#tarjeta {
+.tabla {
+    width: 200px;
+}
+
+/*#tarjeta {
     border-radius: 10px;
     border-style: solid;
     border-color: black;
     box-shadow: 10px 10px 10px silver;
-}
+} formato tarjeta opcional*/
 
-div {
+/*opcion de color de fondo*/
+/*div {
     background-color: #a1b5cb;
-}
+} */
 
 h1, h2,
 h3 {

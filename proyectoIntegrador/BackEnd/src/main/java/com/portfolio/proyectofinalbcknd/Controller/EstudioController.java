@@ -67,12 +67,12 @@ public class EstudioController {
         if (StringUtils.isBlank(dtoEst.getNombreE())){
             return new ResponseEntity(new Mensaje("Nombre Obligatorio"), HttpStatus.BAD_REQUEST);
         }
-        Estudio experiencia = estudioService.getOne(id).get();
-        experiencia.setNombreE(dtoEst.getNombreE());
-        experiencia.setDescripcionE(dtoEst.getDescripcionE());
-        experiencia.setTiempoE(dtoEst.getTiempoE());
+        Estudio estudio = estudioService.getOne(id).get();
+        estudio.setNombreE(dtoEst.getNombreE());
+        estudio.setDescripcionE(dtoEst.getDescripcionE());
+        estudio.setTiempoE(dtoEst.getTiempoE());
         
-        estudioService.save(experiencia);
+        estudioService.save(estudio);
         return new ResponseEntity(new Mensaje("Estudio Actualizada"), HttpStatus.OK);
     }
     

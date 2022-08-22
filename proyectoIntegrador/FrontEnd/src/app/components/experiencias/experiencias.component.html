@@ -1,12 +1,19 @@
-<div class="row">
+<div class="row" id="experiencias">
     <h1>Experiencia Laboral</h1>
     <div class="col-lg-2">
         <button class= "btn btn-success" type="button" routerLink="/agregarexp" *ngIf="isLogged">
             Agregar experiencia
         </button></div>
-    <div class="col-lg-10" id="tarjeta">
+    <div class="col-lg-9 shadow-lg p-3 mb-5 bg-body rounded">
         <table class="table">
             <tbody>
+                <tr>
+                    <td  class="tabla">Nombre</td>
+                    <td  class="tabla">Duración</td>
+                    <td  class="tabla">Descripcion</td>
+                    <td  class="tabla"></td>
+                    <td  class="tabla"></td>
+                </tr>
                 <tr *ngFor="let Experiencia of exp">
                     <td id="titulo"><h2>{{Experiencia.nombreE}}</h2></td>
                     <td>{{Experiencia.tiempoE}}</td>

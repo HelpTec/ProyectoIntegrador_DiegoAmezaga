@@ -1,0 +1,55 @@
+<div class="container" *ngIf="pers">
+    <div class="row">
+        <div>
+            <form (ngSubmit)="actualizar()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="nombreE">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" 
+                    [(ngModel)]="pers.nombre" requiered>
+                </div>
+                <div class="form-group">
+                    <label for="descripcionE">Apellido</label>
+                    <input type="text" class="form-control" id="apellido" name="apellido"
+                        [(ngModel)]="pers.apellido" requiered>
+                </div>
+                <div class="form-group">
+                    <label for="descripcionE">Foto Perfil</label>
+                    <input type="text" class="form-control" id="img" name="img" 
+                    [(ngModel)]="pers.img" requiered>
+                </div>
+                <div class="form-group">
+                    <label for="descripcionE">Descripcion de Perfil(500 caracteres max)</label>
+                    <input type="text" class="form-control" id="about" name="about" 
+                    [(ngModel)]="pers.about" requiered>
+                </div>
+                <div class="form-group">
+                    <label for="descripcionE">Facebook</label>
+                    <input type="text" class="form-control" id="facebook" name="facebook" 
+                    [(ngModel)]="pers.facebook" requiered>
+                </div>
+                <div class="form-group">
+                    <label for="descripcionE">Instangram</label>
+                    <input type="text" class="form-control" id="instangram" name="instangram" 
+                    [(ngModel)]="pers.instangram" requiered>
+                </div>
+                <div class="form-group">
+                    <label for="descripcionE">Linkedin</label>
+                    <input type="text" class="form-control" id="linkedin" name="linkedin" 
+                    [(ngModel)]="pers.linkedin" requiered>
+                </div>
+                <div class="form-group">
+                    <label for="descripcionE">GitHub</label>
+                    <input type="text" class="form-control" id="github" name="github" 
+                    [(ngModel)]="pers.github" requiered>
+                </div>
+                <div class="form-group">
+                    <label for="descripcionE">Twitter</label>
+                    <input type="text" class="form-control" id="twitter" name="twitter" 
+                    [(ngModel)]="pers.twitter" requiered>
+                </div>
+                <button class="btn btn-success" type="submit">
+                    Submit
+                </button>
+            </form>
+        </div>
+    </div>

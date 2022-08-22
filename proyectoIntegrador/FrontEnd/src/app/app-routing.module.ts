@@ -6,6 +6,7 @@ import { ExperienciasAgregarComponent } from './components/experiencias-agregar/
 import { ExperienciasEditarComponent } from './components/experiencias-editar/experiencias-editar.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
 import { AgregarproyectoComponent } from './components/proyecto/agregarproyecto/agregarproyecto.component';
 import { EditarproyectoComponent } from './components/proyecto/editarproyecto/editarproyecto.component';
 import { AgregarHSComponent } from './components/skills/hardskills/agregar-hs/agregar-hs.component';
@@ -16,6 +17,7 @@ import { EditarSSComponent } from './components/skills/softskills/editar-ss/edit
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'perfil/:id', component: PerfilComponent},
   {path:'agregarss', component: AgregarSSComponent},
   {path: 'editarss/:id', component: EditarSSComponent},
   {path:'agregarproy', component: AgregarproyectoComponent},

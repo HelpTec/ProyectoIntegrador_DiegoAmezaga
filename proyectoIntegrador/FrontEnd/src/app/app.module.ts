@@ -29,6 +29,7 @@ import { HardskillsComponent } from './components/skills/hardskills/hardskills/h
 import { SoftskillsComponent } from './components/skills/softskills/softskills/softskills.component';
 import { AgregarproyectoComponent } from './components/proyecto/agregarproyecto/agregarproyecto.component';
 import { EditarproyectoComponent } from './components/proyecto/editarproyecto/editarproyecto.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
 
 
 @NgModule({
@@ -57,6 +58,7 @@ import { EditarproyectoComponent } from './components/proyecto/editarproyecto/ed
     SoftskillsComponent,
     AgregarproyectoComponent,
     EditarproyectoComponent,
+    PerfilComponent,
   ],
   imports: [
     BrowserModule,
