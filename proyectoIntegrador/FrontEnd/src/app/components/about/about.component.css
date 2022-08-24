@@ -10,7 +10,7 @@ div{
 @media (max-width: 575px){
 button{
     width:30%;
-};
+}
 span{
     margin-top: 2px;
     padding-top: 0px;
@@ -59,7 +59,7 @@ span{
         margin-top: 50%;
         margin-left: 0;
         padding:0;
-    };
+    }
     #nom {
         margin-left: 0;
         padding-bottom: 0;

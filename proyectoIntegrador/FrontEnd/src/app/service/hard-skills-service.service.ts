@@ -7,7 +7,7 @@ import { HardSkills } from '../model/HardSkills';
   providedIn: 'root'
 })
 export class HardSkillsService {
-estUrl = 'http://localhost:8080/hSkills'
+estUrl = 'https://portfoliobckend.herokuapp.com/hSkills'
 
   constructor(private httpClient: HttpClient) { }
 

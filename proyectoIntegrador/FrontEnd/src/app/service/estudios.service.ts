@@ -8,7 +8,7 @@ import { Estudios } from '../model/estudios';
 })
 export class EstudioService {
 
-  expUrl = 'http://localhost:8080/estu'
+  expUrl = 'https://portfoliobckend.herokuapp.com/estu'
 
   constructor(private httpClient: HttpClient) { }
 
