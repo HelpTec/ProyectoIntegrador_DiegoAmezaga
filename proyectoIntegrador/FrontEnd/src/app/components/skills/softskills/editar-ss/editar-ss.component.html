@@ -1,1 +1,24 @@
-<p>editar-ss works!</p>
+<div class="container" *ngIf="skill">
+    <div class="row">
+        <div>
+            <form (ngSubmit)="actualizar()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="nombreE">Nombre de la Habilidad Blanda</label>
+                    <input type="text" class="form-control" id="nombreS" name="nombreS" [(ngModel)]="skill.nombreS"
+                        requiered>
+                </div>
+                <div class="form-group">
+                    <label for="descripcionE">Nivel</label>
+                    <input type="text" class="form-control" id="nivelS" name="nivelS"
+                        [(ngModel)]="skill.nivelS" requiered>
+                </div>
+                <!--<div class="form-group">
+                    <label for="descripcionE">Url de la Imagen</label>
+                    <input type="text" class="form-control" id="iconoS" name="iconoS" [(ngModel)]="skill.iconoS" requiered>
+                </div>-->
+                <button class="btn btn-success" type="submit">
+                    Submit
+                </button>
+            </form>
+        </div>
+    </div>
