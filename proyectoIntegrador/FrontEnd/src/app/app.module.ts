@@ -30,7 +30,10 @@ import { SoftskillsComponent } from './components/skills/softskills/softskills/s
 import { AgregarproyectoComponent } from './components/proyecto/agregarproyecto/agregarproyecto.component';
 import { EditarproyectoComponent } from './components/proyecto/editarproyecto/editarproyecto.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
-
+import { AbouteditComponent } from './components/about/aboutedit/aboutedit.component';
+import { EditComponent } from './components/banner/edit/edit.component';
+import { FotoeditComponent } from './components/about/fotoedit/fotoedit.component';
+import { NameeditComponent } from './components/about/nameedit/nameedit.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +62,10 @@ import { PerfilComponent } from './components/perfil/perfil.component';
     AgregarproyectoComponent,
     EditarproyectoComponent,
     PerfilComponent,
+    AbouteditComponent,
+    EditComponent,
+    FotoeditComponent,
+    NameeditComponent
   ],
   imports: [
     BrowserModule,

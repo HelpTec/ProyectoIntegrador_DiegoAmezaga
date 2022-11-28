@@ -13,9 +13,17 @@ import { AgregarHSComponent } from './components/skills/hardskills/agregar-hs/ag
 import { EditarHSComponent } from './components/skills/hardskills/editar-hs/editar-hs.component';
 import { AgregarSSComponent } from './components/skills/softskills/agregar-ss/agregar-ss.component';
 import { EditarSSComponent } from './components/skills/softskills/editar-ss/editar-ss.component';
+import { AbouteditComponent } from './components/about/aboutedit/aboutedit.component';
+import { FotoeditComponent } from './components/about/fotoedit/fotoedit.component';
+import { NameeditComponent } from './components/about/nameedit/nameedit.component';
+import { EditComponent } from './components/banner/edit/edit.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
+  {path: 'aboutedit/:id', component: AbouteditComponent},
+  {path: 'fotoedit/:id', component: FotoeditComponent},
+  {path: 'nameedit/:id', component: NameeditComponent},
+  {path: 'edit/:id', component: EditComponent},
   {path: 'login', component: LoginComponent},
   {path: 'perfil/:id', component: PerfilComponent},
   {path:'agregarss', component: AgregarSSComponent},

@@ -3,26 +3,6 @@
         <div>
             <form (ngSubmit)="actualizar()" novalidate #f="ngForm">
                 <div class="form-group">
-                    <label for="nombreE">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre" 
-                    [(ngModel)]="pers.nombre" requiered>
-                </div>
-                <div class="form-group">
-                    <label for="descripcionE">Apellido</label>
-                    <input type="text" class="form-control" id="apellido" name="apellido"
-                        [(ngModel)]="pers.apellido" requiered>
-                </div>
-                <div class="form-group">
-                    <label for="descripcionE">Foto Perfil</label>
-                    <input type="text" class="form-control" id="img" name="img" 
-                    [(ngModel)]="pers.img" requiered>
-                </div>
-                <div class="form-group">
-                    <label for="descripcionE">Descripcion de Perfil(500 caracteres max)</label>
-                    <input type="text" class="form-control" id="about" name="about" 
-                    [(ngModel)]="pers.about" requiered>
-                </div>
-                <div class="form-group">
                     <label for="descripcionE">Facebook</label>
                     <input type="text" class="form-control" id="facebook" name="facebook" 
                     [(ngModel)]="pers.facebook" requiered>

@@ -3,6 +3,7 @@ export class persona{
     nombre: String;
     apellido: String;
     img: String;
+    banner: String;
     about: String;
     facebook: String;
     instangram: String;
@@ -10,11 +11,12 @@ export class persona{
     github: String;
     twitter: String;
 
-    constructor(nombre:String, apellido:String, img:String, about:String, facebook:String, instangram:String,
+    constructor(nombre:String, apellido:String, img:String, banner:String, about:String, facebook:String, instangram:String,
         linkedin:String, github:String, twitter:String){
         this.nombre = nombre;
         this.apellido = apellido;
         this.img = img;
+        this.banner = banner;
         this.about = about;
         this.facebook = facebook;
         this.instangram = instangram;

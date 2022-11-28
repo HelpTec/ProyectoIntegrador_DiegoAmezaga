@@ -12,7 +12,7 @@
             <button type="button" class="btn btn-outline-dark" (click)="login()" *ngIf="!isLogged" title="Login"><i class="bi bi-door-closed-fill"></i>
             </button>
             <div class="btn-group" role="group" aria-label="Basic example" *ngIf="isLogged">
-                <button type="button" class="btn btn-outline-dark" title="Ajustes" routerLink="/perfil/{{1}}"><i class="bi bi-toggles"></i></button>
+                <button type="button" class="btn btn-danger" title="Ajustes" routerLink="/perfil/{{1}}"><i class="bi bi-brush"></i></button>
                 <button type="button" class="btn btn-outline-dark" (click)="onLogOut()" title="LogOut"><i class="bi bi-door-open-fill"></i></button>
             </div>
         </div>

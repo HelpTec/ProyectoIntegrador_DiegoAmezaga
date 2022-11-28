@@ -1,0 +1,16 @@
+<div class="container" *ngIf="pers">
+    <div class="row">
+        <div>
+            <form (ngSubmit)="actualizar()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="descripcionE">Foto Perfil</label>
+                    <input type="text" class="form-control" id="img" name="img" 
+                    [(ngModel)]="pers.img" requiered>
+                </div>
+                <button class="btn btn-success" type="submit">
+                    Submit
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

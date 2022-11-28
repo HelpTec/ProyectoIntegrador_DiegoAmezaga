@@ -39,7 +39,7 @@ span{
         top: 450px
     }
 }
-/*css para la foto perfil pantalla chica*/
+/*css para la foto perfil pantalla chica y el boton de edit*/
 @media (max-width: 575px) {
     #foto {
         position: absolute;
@@ -51,8 +51,21 @@ span{
         margin-top: 32%;
         margin-left: 0;
     }
+    .btn-group {
+        position: absolute;
+        top: 540px;
+        right: 50%;
+        }
+    .boton {
+        position: absolute;
+        float: none;
+        margin-top: 0;
+        margin-right: 0;
+        top: 840px;
+        right: 38%;
+    }
 }
-/*css para nombre y titulo con 860px*/
+/*css para nombre y titulo con 860px + boton de edit*/
 @media (min-width: 576px) and (max-width: 860px){
     h3, h4{
         float: right;
@@ -64,4 +77,24 @@ span{
         margin-left: 0;
         padding-bottom: 0;
     }
+    .boton {
+        position: absolute;
+        float: none;
+        margin-top: 0;
+        margin-right: 0;
+        top: 680px;
+        right: 89%;
+    }
+}
+/*css para el boton de edit de la foto*/
+.btn-group {
+    float: right;
+    margin-right: -20%;
+    margin-top: -40px;
+}
+/*css para el boton de edit del nombre*/
+.boton {
+    float: right;
+    margin-right: -27%;
+    margin-top: -150px;
 }

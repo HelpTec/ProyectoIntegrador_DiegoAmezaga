@@ -10,7 +10,7 @@ import { TokenService } from 'src/app/service/token.service';
   styleUrls: ['./logo-ap.component.css']
 })
 export class LogoApComponent implements OnInit {
-  pers: persona = new persona("", "", "", "", "", "", "", "", "");
+  pers: persona = new persona("", "", "", "", "", "", "", "", "", "");
   isLogged=false;
 
   constructor(private router:Router, private tokenService: TokenService, private personaService: PersonaService) { }
